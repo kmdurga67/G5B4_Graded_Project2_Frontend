@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+.resume-container {
+    max-width: 800px;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: aquamarine;
+}
+
+.name-header {
+    margin: 0;
+}
+
+.job-title {
+    margin: 0;
+}
+
+.profile-image {
+    max-width: 100px;
+    max-height: 100px;
+    margin-left: 100%;
+}
+
+h2 {
+    background-color: gray;
+    padding: 5px;
+}
+
+p{
+    text-align: justify;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#next-button {
+    float: right;
+}
+
+input {
+    padding: 5px;
+    border-radius: 5px;
+    font-size: larger;
+}
+
+button {
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#job-search {
+    margin-left: 40%;
+}
+
+.left-column,
+.right-column {
+    flex: 1;
+    padding: 20px;
+}
+
+.left-column {
+    background-color: pink;
+    width: 30%;
+}
+
+ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+ul li,
+a,
+h6 {
+    margin: 5px 0;
+    padding-left: 50%;
+    position: relative;
+    text-align: right;
+    font-size: 16px;
+    font-weight: normal;
+}
