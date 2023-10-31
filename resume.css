@@ -10,7 +10,7 @@ h1 {
     max-width: 800px;
     margin: 0 auto;
     border: 1px solid #ddd;
-    padding: 20px;
+    padding: 2px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -18,10 +18,10 @@ h1 {
 
 .header {
     display: flex;
-    flex-direction: column;
     align-items: center;
     text-align: center;
     background-color: aquamarine;
+    margin-bottom: 10px;
 }
 
 .name-header {
@@ -73,27 +73,37 @@ button {
 #job-search {
     margin-left: 40%;
 }
-
-.left-column,
-.right-column {
-    flex: 1;
-    padding: 20px;
-}
-
 .left-column {
+    flex: 1;
+    padding:0% 2%;
     background-color: pink;
-    width: 30%;
+    height: 500px;
 }
+
+.right-column {
+    flex: 2;
+}
+
 
 ul {
     padding: 0;
     list-style-type: none;
 }
 
-ul li,
-a,
 h6 {
-    margin: 5px 0;
+    margin: 1px 0;
+    position: relative;
+    text-align: right;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+a{
+    padding-left: 13%;
+}
+
+ul li{
+    margin: 1px 0;
     padding-left: 50%;
     position: relative;
     text-align: right;
