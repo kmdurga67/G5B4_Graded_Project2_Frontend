@@ -18,7 +18,6 @@ const resumeContent = document.getElementById("resume-content");
 const prevButton = document.getElementById("prev-button");
 const nextButton = document.getElementById("next-button");
 const searchInput = document.getElementById("job-search");
-const searchButton = document.getElementById("search-button");
 const errorMessage = document.getElementById("error-message");
 
 function displayApplicant() {
@@ -195,21 +194,24 @@ nextButton.addEventListener("click", () => {
   }
 });
 
-searchButton.addEventListener("click", () => {
-  const jobToSearch = searchInput.value;
-  if (jobToSearch.trim() === "") {
-    errorMessage.textContent = "Invalid search or No applications for this job";
-    return;
-  }
+searchInput.addEventListener("keyup", (event) => {
+  if (event.key === "Enter") {
+    const jobToSearch = searchInput.value;
+    if (jobToSearch.trim() === "") {
+      errorMessage.textContent = "Invalid search or No applications for this job";
+      return;
+    }
 
-  filteredApplicants = filterApplicants(jobToSearch);
-  if (filteredApplicants.length === 0) {
-    errorMessage.textContent = "Invalid search or No applications for this job";
-    resumeContent.innerHTML = "";
-  } else {
-    currentApplicantIndex = 0;
-    displayApplicant();
-    checkNavigationButtons();
-    errorMessage.textContent = "";
+    filteredApplicants = filterApplicants(jobToSearch);
+    if (filteredApplicants.length === 0) {
+      errorMessage.textContent = "Invalid search or No applications for this job";
+      resumeContent.innerHTML = "";
+    } else {
+      currentApplicantIndex = 0;
+      displayApplicant();
+      checkNavigationButtons();
+      errorMessage.textContent = "";
+    }
   }
 });
+
