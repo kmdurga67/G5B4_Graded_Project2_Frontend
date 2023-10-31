@@ -4,38 +4,30 @@ body {
 
 h1 {
     text-align: center;
+    margin: 0;
 }
 
 .resume-container {
     max-width: 800px;
     margin: 0 auto;
     border: 1px solid #ddd;
-    padding: 2px;
-    display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
 .header {
-    display: flex;
-    align-items: center;
-    text-align: center;
     background-color: aquamarine;
     margin-bottom: 10px;
 }
 
-.name-header {
-    margin: 0;
-}
-
 .job-title {
     margin: 0;
+    text-align: center;
 }
 
 .profile-image {
     max-width: 100px;
     max-height: 100px;
-    margin-left: 100%;
 }
 
 h2 {
