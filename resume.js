@@ -22,108 +22,107 @@ const errorMessage = document.getElementById("error-message");
 
 function displayApplicant() {
   const applicant = filteredApplicants[currentApplicantIndex];
-  resumeContent.innerHTML = '';
+  resumeContent.innerHTML = "";
 
   if (applicant) {
-    const resumeContainer = document.createElement('div');
-    resumeContainer.className = 'resume-container';
-    
-    const headerSection = document.createElement('div');
-    headerSection.className = 'header';
-    
-    const nameHeader = document.createElement('h1');
+    const resumeContainer = document.createElement("div");
+    resumeContainer.className = "resume-container";
+
+    const headerSection = document.createElement("div");
+    headerSection.className = "header";
+
+    const nameHeader = document.createElement("h1");
     nameHeader.textContent = applicant.basics.name;
     headerSection.appendChild(nameHeader);
-    
-    const lineBreak = document.createElement('br');
+
+    const lineBreak = document.createElement("br");
     headerSection.appendChild(lineBreak);
-    
-    const jobTitle = document.createElement('p');
-    jobTitle.className = 'job-title';
+
+    const jobTitle = document.createElement("p");
+    jobTitle.className = "job-title";
     jobTitle.textContent = `Applied For: ${applicant.basics.AppliedFor}`;
     headerSection.appendChild(jobTitle);
-    
-    const profileImage = document.createElement('img');
+
+    const profileImage = document.createElement("img");
     profileImage.src = applicant.basics.image;
-    profileImage.className = 'profile-image';
+    profileImage.className = "profile-image";
     headerSection.appendChild(profileImage);
-    
+
     resumeContainer.appendChild(headerSection);
-    
 
-    const personalInfoRow = document.createElement('div');
-    personalInfoRow.className = 'row';
+    const personalInfoRow = document.createElement("div");
+    personalInfoRow.className = "row";
 
-    const leftColumn = document.createElement('div');
-    leftColumn.className = 'left-column';
+    const leftColumn = document.createElement("div");
+    leftColumn.className = "left-column";
 
-    const personalInfoHeading = document.createElement('h2');
-    personalInfoHeading.textContent = 'Personal Information';
+    const personalInfoHeading = document.createElement("h2");
+    personalInfoHeading.textContent = "Personal Information";
     leftColumn.appendChild(personalInfoHeading);
 
-    const phoneInfo = document.createElement('h6');
+    const phoneInfo = document.createElement("h6");
     phoneInfo.textContent = `${applicant.basics.phone}`;
     leftColumn.appendChild(phoneInfo);
 
-    const emailInfo = document.createElement('h6');
+    const emailInfo = document.createElement("h6");
     emailInfo.textContent = `${applicant.basics.email}`;
     leftColumn.appendChild(emailInfo);
 
-    const profileInfo = document.createElement('a');
+    const profileInfo = document.createElement("a");
     profileInfo.textContent = `${applicant.basics.profiles.url}`;
     leftColumn.appendChild(profileInfo);
 
-    const skillsHeading = document.createElement('h2');
-    skillsHeading.textContent = 'Technical Skills';
+    const skillsHeading = document.createElement("h2");
+    skillsHeading.textContent = "Technical Skills";
     leftColumn.appendChild(skillsHeading);
 
-    const skillsList = document.createElement('ul');
+    const skillsList = document.createElement("ul");
     applicant.skills.keywords.forEach((skill) => {
-      const skillItem = document.createElement('li');
+      const skillItem = document.createElement("li");
       skillItem.textContent = skill;
       skillsList.appendChild(skillItem);
     });
     leftColumn.appendChild(skillsList);
 
-    const hobbiesHeading = document.createElement('h2');
-    hobbiesHeading.textContent = 'Hobbies';
+    const hobbiesHeading = document.createElement("h2");
+    hobbiesHeading.textContent = "Hobbies";
     leftColumn.appendChild(hobbiesHeading);
 
-    const hobbiesList = document.createElement('ul');
+    const hobbiesList = document.createElement("ul");
     applicant.interests.hobbies.forEach((hobby) => {
-      const hobbyItem = document.createElement('li');
+      const hobbyItem = document.createElement("li");
       hobbyItem.textContent = hobby;
       hobbiesList.appendChild(hobbyItem);
     });
     leftColumn.appendChild(hobbiesList);
 
-    const rightColumn = document.createElement('div');
-    rightColumn.className = 'right-column';
+    const rightColumn = document.createElement("div");
+    rightColumn.className = "right-column";
 
-    const workExpHeading = document.createElement('h3');
-    workExpHeading.textContent = 'Work Experience';
+    const workExpHeading = document.createElement("h3");
+    workExpHeading.textContent = "Work Experience";
     rightColumn.appendChild(workExpHeading);
 
-    const workExpItem = document.createElement('p');
+    const workExpItem = document.createElement("p");
     workExpItem.innerHTML = `<strong>${applicant.work["Company Name"]} - ${applicant.work.Position}</strong><br>
                               Start Date: ${applicant.work["Start Date"]}<br>
                               End Date: ${applicant.work["End Date"]}<br>
                               Summary: ${applicant.work.Summary}`;
     rightColumn.appendChild(workExpItem);
 
-    const projectsHeading = document.createElement('h3');
-    projectsHeading.textContent = 'Projects';
+    const projectsHeading = document.createElement("h3");
+    projectsHeading.textContent = "Projects";
     rightColumn.appendChild(projectsHeading);
 
-    const projectItem = document.createElement('p');
+    const projectItem = document.createElement("p");
     projectItem.innerHTML = `<strong>${applicant.projects.name}</strong><br>${applicant.projects.description}`;
     rightColumn.appendChild(projectItem);
 
-    const educationHeading = document.createElement('h3');
-    educationHeading.textContent = 'Education';
+    const educationHeading = document.createElement("h3");
+    educationHeading.textContent = "Education";
     rightColumn.appendChild(educationHeading);
 
-    const ugItem = document.createElement('p');
+    const ugItem = document.createElement("p");
     ugItem.innerHTML = `<strong>${applicant.education.UG.institute}</strong><br>
                           Course: ${applicant.education.UG.course}<br>
                           Start Date: ${applicant.education.UG["Start Date"]}<br>
@@ -131,18 +130,18 @@ function displayApplicant() {
                           CGPA: ${applicant.education.UG.cgpa}`;
     rightColumn.appendChild(ugItem);
 
-    const seniorSecondaryItem = document.createElement('p');
+    const seniorSecondaryItem = document.createElement("p");
     seniorSecondaryItem.innerHTML = `<strong>${applicant.education["Senior Secondary"].institute}</strong><br>
                                       CGPA: ${applicant.education["Senior Secondary"].cgpa}`;
     rightColumn.appendChild(seniorSecondaryItem);
 
-    const achievementsHeading = document.createElement('h3');
-    achievementsHeading.textContent = 'Achievements';
+    const achievementsHeading = document.createElement("h3");
+    achievementsHeading.textContent = "Achievements";
     rightColumn.appendChild(achievementsHeading);
 
-    const achievementsList = document.createElement('ul');
+    const achievementsList = document.createElement("ul");
     applicant.achievements.Summary.forEach((achievement) => {
-      const achievementItem = document.createElement('p');
+      const achievementItem = document.createElement("p");
       achievementItem.textContent = achievement;
       achievementsList.appendChild(achievementItem);
     });
@@ -155,8 +154,6 @@ function displayApplicant() {
     resumeContent.appendChild(resumeContainer);
   }
 }
-
-
 
 function checkNavigationButtons() {
   if (filteredApplicants.length <= 1) {
@@ -198,13 +195,15 @@ searchInput.addEventListener("keyup", (event) => {
   if (event.key === "Enter") {
     const jobToSearch = searchInput.value;
     if (jobToSearch.trim() === "") {
-      errorMessage.textContent = "Invalid search or No applications for this job";
+      errorMessage.textContent =
+        "Invalid search or No applications for this job";
       return;
     }
 
     filteredApplicants = filterApplicants(jobToSearch);
     if (filteredApplicants.length === 0) {
-      errorMessage.textContent = "Invalid search or No applications for this job";
+      errorMessage.textContent =
+        "Invalid search or No applications for this job";
       resumeContent.innerHTML = "";
     } else {
       currentApplicantIndex = 0;
@@ -214,4 +213,3 @@ searchInput.addEventListener("keyup", (event) => {
     }
   }
 });
-
